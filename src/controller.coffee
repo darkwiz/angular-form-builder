@@ -149,3 +149,4 @@ angular.module 'builder.controller', ['builder.provider']
             value: value ? ''
         $scope.$parent.input.splice $scope.$index, 1, input
 ]
+

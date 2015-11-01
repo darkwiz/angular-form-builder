@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "module.js",
+  "sourceRoot": "../../bower_components/angular-validator/src",
+  "sources": [
+    "module.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAO,CAAC,MAAR,CAAe,WAAf,EAA4B,CAAC,qBAAD,CAA5B;AAAA"
+}

@@ -541,6 +541,27 @@
         }
       };
     }
+  ]).directive('fbTabs', [
+    '$injector', function($injector) {
+      var $builder;
+      $builder = $injector.get('$builder');
+      return {
+        restrict: 'E',
+        templateUrl: 'src/ngPages.html',
+        link: function(scope, element, attrs) {
+          scope.tab = 1;
+          scope.seeForms = function() {
+            return console.log($builder.forms['default']);
+          };
+          scope.selectTab = function(setTab) {
+            return scope.tab = setTab;
+          };
+          return scope.isSelected = function(checkTab) {
+            return scope.tab === checkTab;
+          };
+        }
+      };
+    }
   ]);
 
 }).call(this);

@@ -10,6 +10,8 @@ angular.module 'builder.directive', [
 ]
 
 
+
+
 # ----------------------------------------
 # fb-builder
 # ----------------------------------------
@@ -389,4 +391,27 @@ angular.module 'builder.directive', [
                 scope.inputArray = value
             else
                 scope.inputText = value
+]
+# ----------------------------------------
+# fb-tabs
+# ----------------------------------------
+.directive 'fbTabs', ['$injector', ($injector) ->
+
+  $builder = $injector.get '$builder'
+  restrict: 'E'
+  # scope: {array: '='} do not use this!  prevents from printing scope variable contents
+  templateUrl: 'src/ngPages.html'
+  link: (scope, element, attrs) ->
+
+    scope.tab = 1
+
+    scope.seeForms = ->
+      console.log $builder.forms['default']
+
+    scope.selectTab = (setTab) ->
+      scope.tab = setTab
+
+    scope.isSelected = (checkTab) ->
+      scope.tab == checkTab
+
 ]
